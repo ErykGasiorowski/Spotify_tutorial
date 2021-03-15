@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF12F1ED25FE55B400C25068 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12F1EC25FE55B400C25068 /* Extensions.swift */; };
 		CF5962D625FE2B5800C0A53A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5962D525FE2B5800C0A53A /* AppDelegate.swift */; };
 		CF5962D825FE2B5800C0A53A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5962D725FE2B5800C0A53A /* SceneDelegate.swift */; };
 		CF5962DA25FE2B5800C0A53A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5962D925FE2B5800C0A53A /* HomeViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF12F1EC25FE55B400C25068 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CF5962D225FE2B5800C0A53A /* Spotify tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotify tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5962D525FE2B5800C0A53A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF5962D725FE2B5800C0A53A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				CF5962D525FE2B5800C0A53A /* AppDelegate.swift */,
 				CF5962D725FE2B5800C0A53A /* SceneDelegate.swift */,
 				CF5962DE25FE2B5900C0A53A /* Assets.xcassets */,
+				CF12F1EC25FE55B400C25068 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				CF59631F25FE2D9100C0A53A /* ProfileViewController.swift in Sources */,
 				CF59631C25FE2D8000C0A53A /* SettingsViewController.swift in Sources */,
 				CF59630C25FE2D1100C0A53A /* SearchViewController.swift in Sources */,
+				CF12F1ED25FE55B400C25068 /* Extensions.swift in Sources */,
 				CF5962F325FE2C6100C0A53A /* AuthManager.swift in Sources */,
 				CF5962FC25FE2C9100C0A53A /* Playlist.swift in Sources */,
 				CF5962D625FE2B5800C0A53A /* AppDelegate.swift in Sources */,
