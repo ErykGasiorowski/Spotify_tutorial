@@ -30,6 +30,7 @@
 		CF59632225FE2D9F00C0A53A /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59632125FE2D9F00C0A53A /* PlayerViewController.swift */; };
 		CF59632525FE2DB700C0A53A /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59632425FE2DB700C0A53A /* PlaylistViewController.swift */; };
 		CF59632825FE2DDD00C0A53A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59632725FE2DDD00C0A53A /* SearchResultsViewController.swift */; };
+		CF90221125FFF19C000CA438 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90221025FFF19C000CA438 /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		CF59632125FE2D9F00C0A53A /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CF59632425FE2DB700C0A53A /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		CF59632725FE2DDD00C0A53A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		CF90221025FFF19C000CA438 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				CF5962FE25FE2C9900C0A53A /* AudioTrack.swift */,
 				CF59630125FE2CA000C0A53A /* Artist.swift */,
 				CF59630425FE2CA700C0A53A /* UserProfile.swift */,
+				CF90221025FFF19C000CA438 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				CF5962FF25FE2C9900C0A53A /* AudioTrack.swift in Sources */,
 				CF59632225FE2D9F00C0A53A /* PlayerViewController.swift in Sources */,
 				CF59630225FE2CA000C0A53A /* Artist.swift in Sources */,
+				CF90221125FFF19C000CA438 /* AuthResponse.swift in Sources */,
 				CF59631925FE2D6C00C0A53A /* WelcomeViewController.swift in Sources */,
 				CF59632825FE2DDD00C0A53A /* SearchResultsViewController.swift in Sources */,
 				CF59631F25FE2D9100C0A53A /* ProfileViewController.swift in Sources */,
