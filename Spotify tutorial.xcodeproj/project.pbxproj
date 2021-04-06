@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,10 @@
 		CF59632825FE2DDD00C0A53A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59632725FE2DDD00C0A53A /* SearchResultsViewController.swift */; };
 		CF7F21C5260BAFB200423F0D /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7F21C4260BAFB100423F0D /* SettingsModels.swift */; };
 		CF90221125FFF19C000CA438 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90221025FFF19C000CA438 /* AuthResponse.swift */; };
+		CFA15E7926138E0300504BD7 /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA15E7826138E0300504BD7 /* NewReleasesResponse.swift */; };
+		CFD871E3261C6BDC00B2C24F /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD871E2261C6BDC00B2C24F /* FeaturedPlaylistsResponse.swift */; };
+		CFD871E6261CF9E500B2C24F /* RecommendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD871E5261CF9E500B2C24F /* RecommendedGenresResponse.swift */; };
+		CFE7FD3B26160B31008223F1 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7FD3A26160B31008223F1 /* APIImage.swift */; };
 		FAEDBDB91D96A2921063D73E /* Pods_Spotify_tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF0BE02351BF85AF450C788 /* Pods_Spotify_tutorial.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,10 @@
 		CF59632725FE2DDD00C0A53A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		CF7F21C4260BAFB100423F0D /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		CF90221025FFF19C000CA438 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		CFA15E7826138E0300504BD7 /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
+		CFD871E2261C6BDC00B2C24F /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
+		CFD871E5261CF9E500B2C24F /* RecommendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedGenresResponse.swift; sourceTree = "<group>"; };
+		CFE7FD3A26160B31008223F1 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +94,6 @@
 				51C6A5DC260A9BA3B147D95F /* Pods-Spotify tutorial.debug.xcconfig */,
 				652D3710FFEE9BA589C1D01E /* Pods-Spotify tutorial.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,6 +163,10 @@
 				CF59630425FE2CA700C0A53A /* UserProfile.swift */,
 				CF90221025FFF19C000CA438 /* AuthResponse.swift */,
 				CF7F21C4260BAFB100423F0D /* SettingsModels.swift */,
+				CFA15E7826138E0300504BD7 /* NewReleasesResponse.swift */,
+				CFE7FD3A26160B31008223F1 /* APIImage.swift */,
+				CFD871E2261C6BDC00B2C24F /* FeaturedPlaylistsResponse.swift */,
+				CFD871E5261CF9E500B2C24F /* RecommendedGenresResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,11 +341,13 @@
 				CF5962F925FE2C7300C0A53A /* HapticsManager.swift in Sources */,
 				CF5962DA25FE2B5800C0A53A /* HomeViewController.swift in Sources */,
 				CF59630925FE2CEC00C0A53A /* TabBarViewController.swift in Sources */,
+				CFE7FD3B26160B31008223F1 /* APIImage.swift in Sources */,
 				CF59630525FE2CA700C0A53A /* UserProfile.swift in Sources */,
 				CF5962FF25FE2C9900C0A53A /* AudioTrack.swift in Sources */,
 				CF59632225FE2D9F00C0A53A /* PlayerViewController.swift in Sources */,
 				CF59630225FE2CA000C0A53A /* Artist.swift in Sources */,
 				CF90221125FFF19C000CA438 /* AuthResponse.swift in Sources */,
+				CFA15E7926138E0300504BD7 /* NewReleasesResponse.swift in Sources */,
 				CF59631925FE2D6C00C0A53A /* WelcomeViewController.swift in Sources */,
 				CF59632825FE2DDD00C0A53A /* SearchResultsViewController.swift in Sources */,
 				CF59631F25FE2D9100C0A53A /* ProfileViewController.swift in Sources */,
@@ -348,7 +361,9 @@
 				CF59631625FE2D5C00C0A53A /* AuthViewController.swift in Sources */,
 				CF5962F625FE2C6A00C0A53A /* APICaller.swift in Sources */,
 				CF5962D825FE2B5800C0A53A /* SceneDelegate.swift in Sources */,
+				CFD871E3261C6BDC00B2C24F /* FeaturedPlaylistsResponse.swift in Sources */,
 				CF59630F25FE2D1C00C0A53A /* LibraryViewController.swift in Sources */,
+				CFD871E6261CF9E500B2C24F /* RecommendedGenresResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
