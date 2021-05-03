@@ -167,9 +167,9 @@ class HomeViewController: UIViewController {
         self.tracks = tracks
         
         // Configure Models
-        print(newAlbums.count)
-        print(playlists.count)
-        print(tracks.count)
+//        print(newAlbums.count)
+//        print(playlists.count)
+//        print(tracks.count)
         sections.append(.newReleases(viewModels: newAlbums.compactMap({
             return NewReleasesCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.total_tracks, artistName: $0.artists.first?.name ?? "-"
             )
