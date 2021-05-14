@@ -5,6 +5,7 @@
 //  Created by Eryk Gasiorowski on 13/03/2021.
 //
 
+import SafariServices
 import UIKit
 
 
@@ -120,7 +121,12 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
     func didTapResult(_ result: SearchResult) {
         switch result {
         case .artist(let model):
-            break
+            guard let url = URL(string: model.external_urls ["spotify"] ?? "") else {
+                return
+            }
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true)
+            
         case .album(let model):
             let vc = AlbumViewController(album: model)
             vc.navigationItem.largeTitleDisplayMode = .never
