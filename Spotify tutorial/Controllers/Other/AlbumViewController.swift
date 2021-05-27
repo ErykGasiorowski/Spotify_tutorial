@@ -50,6 +50,7 @@ class AlbumViewController: UIViewController {
     
 
     private let album: Album
+    private var tracks = [AudioTrack]()
     
     init(album: Album) {
         self.album = album
@@ -84,6 +85,7 @@ class AlbumViewController: UIViewController {
                 switch result {
                 
                 case .success(let model):
+                    self?.tracks = model.tracks.items
                     self?.viewModels = model.tracks.items.compactMap({ AlbumCollectionViewCellViewModel(
                         name: $0.name,
                         artistName: $0.artists.first?.name ?? "-"
@@ -149,16 +151,25 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
 collectionView.deselectItem(at: indexPath, animated: true)
 // Play song
 
+    var track = tracks[indexPath.row]
+    track.album = self.album
+    PlaybackPresenter.shared.startPlayback(from: self, track: track)
 }
 
 }
 
 extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
 func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
-// Start playlist playing all in queue
 
-print("Playing all")
-
-}
-
+    let tracksWithAlbum: [AudioTrack] = tracks.compactMap({
+        var track = $0
+        track.album = self.album
+        
+        return track
+    })
+        
+    // Start playlist playing all in queue
+    PlaybackPresenter.shared.startPlayback(from: self, tracks: tracksWithAlbum)
+    
+    }
 }
