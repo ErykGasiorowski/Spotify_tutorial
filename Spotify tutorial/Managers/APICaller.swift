@@ -48,6 +48,64 @@ final class APICaller {
         }
     }
     
+    public func getCurrentUserAlbums(completion: @escaping (Result<[Album], Error>) -> Void) {
+        createRequest(
+            with: URL(string: Constants.baseAPIURL + "/me/albums"),
+            type: .GET
+        ) { request in
+            
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(LibraryAlbumsResponse.self, from: data)
+                        //JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    completion(.success(result.items.compactMap({ $0.album })))
+                    //print(result)
+                }
+                catch {
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func addAlbumToLibrary(album: Album, completion: @escaping (Bool) -> Void) {
+        createRequest(
+            with: URL(string: Constants.baseAPIURL + "/me/albums?ids=\(album.id)"),
+            type: .PUT
+        ) { baseRequest in
+            var request = baseRequest
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let code = (response as? HTTPURLResponse)?.statusCode,
+                      error == nil else {
+                    completion(false)
+                    return
+                }
+                print(code)
+                completion(code == 200)
+//                do {
+//                    //let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+//                        //JSONDecoder().decode(LibraryAlbumsResponse.self, from: data)
+//
+//                    completion(true)
+//                    //print(result)
+//                }
+//                catch {
+//                    print(error)
+//                    completion(false)
+//                }
+            }
+            task.resume()
+        }
+    }
+    
     // MARK: - Playlists
     
     public func getPlaylistDetails(for playlist: Playlist, completion: @escaping (Result<PlaylistDetailsRespones, Error>) -> Void) {
@@ -199,7 +257,43 @@ final class APICaller {
         playlist: Playlist,
         completion: @escaping (Bool) -> Void
     ) {
-        
+        createRequest(
+            with: URL(string: Constants.baseAPIURL + "/playlists/\(playlist.id)/tracks"),
+            type: .DELETE
+        ) { baseRequest in
+            var request = baseRequest
+            let json: [String: Any] = [
+                "tracks": [
+                    [
+                        "uri": "spotify:track:\(track.id)"
+                        ]
+                    ]
+            ]
+            request.httpBody = try? JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(false)
+                    return
+                }
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    if let response = result as? [String: Any], response ["snapshot_id"] as? String != nil {
+                        completion(true)
+                    }
+                    else {
+                        completion(false)
+                    }
+                    //print(result)
+                }
+                
+                catch {
+                    print(error.localizedDescription)
+                    completion(false)
+                }
+            }
+            task.resume()
+        }
         
     }
     
@@ -408,6 +502,8 @@ final class APICaller {
     enum HTTPMethod: String {
         case GET
         case POST
+        case DELETE
+        case PUT
     }
     
     private func createRequest(
